@@ -6,6 +6,8 @@ import { Formularios } from './pages/formularios/formularios';
 import { Servicios } from './pages/servicios/servicios';
 import { HttpClient } from './pages/http-client/http-client';
 import { Databinding } from './pages/data-binding/data-binding';
+import { Detalle } from './pages/detalle/detalle';
+import { FormResultado } from './pages/form-resultado/form-resultado';
 
 export const routes: Routes = [
     {
@@ -39,5 +41,13 @@ export const routes: Routes = [
     {
         path: 'http-client',
         component: HttpClient
+    },
+    {
+        path: 'detalle/:id',
+        component: Detalle
+    },
+    {
+        path: 'form-resultado',
+        component: FormResultado
     }
 ];

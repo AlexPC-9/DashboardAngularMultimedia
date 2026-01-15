@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Store } from '../comunicacion/store';
+import { AlumnoService } from '../comunicacion/store';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class Formularios {
 
-  store = inject(Store);
+  store = inject(AlumnoService);
   router = inject(Router);
 
   practicaForm = new FormGroup({
@@ -39,7 +39,7 @@ export class Formularios {
   });
 
   enviarFormulario() {
-    //this.store.setResultado(this.practicaForm.value);
+    this.store.setResultado(this.practicaForm.value);
     console.log(this.practicaForm.value);
     this.router.navigate(['/form-resultado']);
   }

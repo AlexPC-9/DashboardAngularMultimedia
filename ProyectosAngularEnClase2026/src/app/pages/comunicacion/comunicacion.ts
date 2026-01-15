@@ -1,27 +1,26 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Para @if y clases comunes
-import { FormsModule } from '@angular/forms'; 
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Hijo } from './hijo/hijo';
+import { AlumnoService } from './store'; // Asegúrate de que la ruta sea correcta
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-comunicacion',
   standalone: true,
-  imports: [CommonModule, FormsModule, Hijo],
+  imports: [CommonModule, FormsModule, Hijo, RouterLink],
   templateUrl: './comunicacion.html',
   styleUrl: './comunicacion.css',
 })
 export class Comunicacion {
-  showModal: boolean = false;
   mensajeDelPadre: string = '';
   mensajeDelHijo: string = '';
 
-  openModal() {
-    this.showModal = true;
-  }
+  // Inyectamos el servicio
+  private alumnoService = inject(AlumnoService);
 
-  closeModal() {
-    this.showModal = false;
-  }
+  // Obtenemos la lista de alumnos usando el método que creaste en el store
+  alumnos = this.alumnoService.getAlumnos();
 
   recibirMensajeDelHijo(event: string) {
     this.mensajeDelHijo = event;
