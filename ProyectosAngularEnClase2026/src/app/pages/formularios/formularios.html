@@ -1,78 +1,43 @@
 <main class="h-full pb-16 overflow-y-auto w-full">
 
     <div class="container px-6 mx-auto grid">
-
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-
-            Formularios reactivos
-
-        </h2>
-
+        <h2 class="my-6 text-2xl font-semibold text-gray-700">Formularios Reactivos</h2>
         <!-- CTA -->
-
         <a
             class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">
-
             <div class="flex items-center">
-
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
                     <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-
                     </path>
-
                 </svg>
-
                 <span>Manejo de formularios en Angular desde el código TypeScript.</span>
-
             </div>
-
             <a href="https://sites.google.com/colegiolitterator.com/programacin-multimedia-y-dm/angular/formularios?authuser=1"
                 target="_blank"><span>Temario &RightArrow;</span></a>
-
         </a>
-
-
         <!-- General elements -->
-
-        <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
-
+        <h4 class="mb-4 text-lg font-semibold text-gray-700 ">
             Ejercicio práctico
-
         </h4>
-
 
         <form [formGroup]="practicaForm" (ngSubmit)="enviarFormulario()">
 
-
             <div
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-
-
                 <label
                     class="border-b border-b-gray-400 col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 block text-sm">
-
                     <span class="text-gray-700 dark:text-gray-400">Nombre</span>
-
                     <input formControlName="nombre"
                         class="bg-gray-50 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Introduce tu nombre" />
-
                     @if (practicaForm.get('nombre')?.hasError('required') && practicaForm.get('nombre')?.touched &&
-
                     practicaForm.get('nombre')?.dirty) {
-
                     <div class="text-red-500">
-
                         El nombre es obligatorio
-
                     </div>
-
                     }
-
                 </label>
-
 
                 <label
                     class="border-b border-b-gray-400 col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 block text-sm">

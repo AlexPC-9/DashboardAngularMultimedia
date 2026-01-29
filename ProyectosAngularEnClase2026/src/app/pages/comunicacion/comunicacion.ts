@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Hijo } from './hijo/hijo';
-import { AlumnoService } from './store'; // Asegúrate de que la ruta sea correcta
+import { AlumnoService } from './store';
 import { RouterLink } from '@angular/router';
 
 @Component({

@@ -8,6 +8,7 @@ import { HttpClient } from './pages/http-client/http-client';
 import { Databinding } from './pages/data-binding/data-binding';
 import { Detalle } from './pages/detalle/detalle';
 import { FormResultado } from './pages/form-resultado/form-resultado';
+import { ListaCorredores } from './pages/listado-corredores/listado-corredores';
 
 export const routes: Routes = [
     {
@@ -49,5 +50,9 @@ export const routes: Routes = [
     {
         path: 'form-resultado',
         component: FormResultado
+    },
+    {
+        path: 'listado-corredores',
+        component: ListaCorredores
     }
 ];

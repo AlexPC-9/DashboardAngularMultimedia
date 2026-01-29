@@ -7,6 +7,7 @@ import { Header } from './header/header';
 
 @Component({
   selector: 'app-root',
+  standalone: true, 
   imports: [RouterOutlet, Aside, AsideM, Body, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -32,5 +33,4 @@ export class App {
   closeSideMenu() {
     this.isSideMenuOpen.set(false);
   }
-
 }
